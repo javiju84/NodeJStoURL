@@ -10,8 +10,12 @@ request({
 }, function (error, response, body) {
 
     if (!error && response.statusCode === 200) {
-        console.log(body) // Print the json response
+    	//var parseo = JSON.parse(body);
+       	console.log(body.dataset.data[10]);
+
+       
     }
-})
+    //var obj = JSON.parse(data);
+});
 app.listen(8080);
 console.log("Servidor conectado puerto 8080")
