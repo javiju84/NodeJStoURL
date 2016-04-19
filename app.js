@@ -10,8 +10,18 @@ request({
 }, function (error, response, body) {
 
     if (!error && response.statusCode === 200) {
-    	//var parseo = JSON.parse(body);
-       	console.log(body.dataset.data[10]);
+    	var parseo = body.dataset.data;
+    //   	console.log(body.dataset.data[10]);
+    var jsonString=[];
+       	for (var i=0; i < parseo.length; i++ ) {
+       		var jsonDato = {};
+       		jsonDato.date = parseo[i][0];
+       		jsonDato.openn = parseo[i][1];
+       		jsonString.push(jsonDato);
+       		//console.log(data);
+       	}
+       	var jsonArray = JSON.parse(JSON.stringify(jsonString));
+       	console.log(jsonArray);
 
        
     }
