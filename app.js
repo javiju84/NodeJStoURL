@@ -13,13 +13,13 @@ request({
     	var parseo = body.dataset.data;
     //   	console.log(body.dataset.data[10]);
     var jsonString=[];
-       	for (var i=0; i < parseo.length; i++ ) {
+       //	for (var i=0; i < parseo.length; i++ ) {
        		var jsonDato = {};
-       		jsonDato.date = parseo[i][0];
-       		jsonDato.openn = parseo[i][1];
+       		jsonDato.date = parseo[0][0];
+       		jsonDato.openn = parseInt(parseo[0][1]);
        		jsonString.push(jsonDato);
-       		//console.log(data);
-       	}
+       		//console.log(jsonDato);
+       	//}
        	var jsonArray = JSON.parse(JSON.stringify(jsonString));
        	console.log(jsonArray);
 
